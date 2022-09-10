@@ -1,0 +1,17 @@
+name: pure-flutter
+
+packages: 
+  - '**'
+ignore:
+  - '.*/**'
+
+scripts:
+  analyze: melos exec -- flutter analyze
+  format: melos exec -- flutter format .
+  get: melos exec -- flutter pub get
+  test:
+    run: melos exec -- flutter test
+    select-package:
+      dir-exists:
+        - test
+      scope: '*interface*'
